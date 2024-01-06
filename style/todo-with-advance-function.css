@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+button{
+    cursor: pointer;
+    border: none;
+}
+section:not(:first-child){
+    margin-top: 100px;
+}
+.Todo-input{
+    padding: 10px 12px;
+}
+.date-input{
+    padding-block: 9px;
+}
+.add-style-button{
+    background-color: green;
+    color: whitesmoke;
+    padding: 12px 30px;
+    font-weight: bold;
+}
+.todo-grid,.grid-template-form-todo{
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    gap: 16px;
+   align-items: center;
+}
+.grid-template-form-todo{
+    margin-bottom: 16px;
+}
+.delete-button{
+    background-color: red;
+    color: whitesmoke;
+    padding: 12px 30px;
+    font-weight: bold;
+}

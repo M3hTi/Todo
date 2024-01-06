@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/todo-with-advance-function.css">
+    <title>Todo with advaned function</title>
+</head>
+<body>
+    <section>
+        <p>Todo List</p>
+        <div class="grid-template-form-todo">
+            <input type="text" placeholder="Todo name" class="Todo-input js-input-todo">
+            <input type="date" class="date-input js-input-date">
+            <button class="add-style-button js-add-todolist">Add</button>
+        </div>
+        <div class="js-show-lists todo-grid"></div>
+    </section>
+    <script>
+
+            
+            // NOTE: ebteda variable addtodoList k araye ast ro tarif mikonim
+            let addTodolist = [];
+
+
+
+            // NOTE: step 2
+            let showLists = function(){
+                let result = '';
+
+                addTodolist.forEach(function(todoObject,index){
+                    const name = todoObject.name;
+                    const date = todoObject.date;
+                    const html = `<div>${name}</div><div>${date}</div>
+                                <button class= "delete-button  js-delete-button">Delete</button>`
+                    result += html;
+
+                })
+                document.querySelector('.js-show-lists')
+                .innerHTML = result;
+
+                let deleteElement = document.querySelectorAll('.js-delete-button');
+                deleteElement.forEach((deleteButton,i)=>{
+                    deleteButton.onclick = function(){
+                        addTodolist.splice(i,1);
+                        showLists();
+                    }
+                })
+
+            }
+
+
+            // NOTE: step 1
+            let addElement = document.querySelector('.js-add-todolist');
+            console.log(addElement);
+
+            addElement.onclick = function(){
+
+                const todo = document.querySelector('.js-input-todo').value;
+                const date = document.querySelector('.js-input-date').value;
+
+                addTodolist.push({
+                    name: todo,
+                    date: date
+                });
+                // console.log(addToDoList);
+
+                document.querySelector('.js-input-todo').value = '';
+
+                showLists();
+
+
+            }
+    </script>
+    
+</body>
+</html>
