@@ -42,3 +42,16 @@ section:not(:first-child){
     padding: 12px 30px;
     font-weight: bold;
 }
+.icon-toggle{
+    position: absolute;
+    top: -50px;
+    left: 100px;
+}
+.icon-toggle i{
+    font-size: 35px;
+}
+.is-toggle{
+    background-color: black;
+    color:white;
+    cursor: pointer;
+}
