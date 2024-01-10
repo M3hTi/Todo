@@ -19,6 +19,9 @@
             <input type="date" class="date-input js-input-date">
             <button class="add-style-button js-add-todolist">Add</button>
         </div>
+        <div>
+            <p class="js-error"></p>
+        </div>
         <div class="js-show-lists todo-grid"></div>
     </section>
     <script>
@@ -59,6 +62,8 @@
             let addElement = document.querySelector('.js-add-todolist');
             console.log(addElement);
 
+            let errorElement = document.querySelector('.js-error');
+
             addElement.onclick = function(){
 
                 const todo = document.querySelector('.js-input-todo').value;
@@ -79,8 +84,15 @@
                  * This allows the user to immediately start typing in the input field after the page loads.
                  */
                  document.querySelector(".js-input-todo").focus();
-                }else{
-                    alert('Please enter a valid todo name');
+                }else if(todo && !date){
+                    errorElement.innerHTML = 'Please enter a valid todo date';
+                    errorElement.style.color = 'red';
+                }else if(!todo && date){
+                    errorElement.innerHTML = 'Please enter a valid todo name';
+                    errorElement.style.color = 'red';
+                }else if(!todo && !date){
+                    errorElement.innerHTML = 'Please enter a valid todo name and date';
+                    errorElement.style.color = 'red';
                 }
 
                 // addTodolist.push({
