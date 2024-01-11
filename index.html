@@ -18,6 +18,7 @@
             <input type="text" placeholder="Todo name" class="Todo-input js-input-todo">
             <input type="date" class="date-input js-input-date">
             <button class="add-style-button js-add-todolist">Add</button>
+            <button class="remove-style-button js-remove-all">remove All</button>
         </div>
         <div>
             <p class="js-error"></p>
@@ -113,6 +114,20 @@
 
             }
 
+
+
+
+            let removeAllElement = document.querySelector('.js-remove-all');
+
+            removeAllElement.onclick = function(){
+                addTodolist = [];
+                showLists();
+            }
+
+
+
+
+            // NOTE: braye toggle krdn
             let toggleElement = document.querySelector('.js-toggle');
 
             let toggle = false;

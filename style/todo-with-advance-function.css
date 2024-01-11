@@ -21,17 +21,23 @@ section:not(:first-child){
 .date-input{
     padding-block: 9px;
 }
-.add-style-button{
+.add-style-button, .remove-style-button{
     background-color: green;
     color: whitesmoke;
     padding: 12px 30px;
     font-weight: bold;
 }
+.remove-style-button{
+    background-color: red;
+}
 .todo-grid,.grid-template-form-todo{
     display: grid;
-    grid-template-columns: 200px 150px 100px;
+    grid-template-columns: 200px 150px 100px 150px;
     gap: 16px;
    align-items: center;
+}
+.todo-grid{
+    grid-template-columns: 200px 150px 100px;
 }
 .grid-template-form-todo{
     margin-bottom: 16px;
